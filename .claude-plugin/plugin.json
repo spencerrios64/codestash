@@ -1,7 +1,7 @@
 {
   "name": "codestash",
-  "version": "1.0.0",
-  "description": "A code vault for AI-written code. Saves reusable code as Obsidian-style notes and lets Claude copy it back instead of rebuilding it.",
+  "version": "1.1.0",
+  "description": "A code vault for AI-written code. Saves reusable code as Obsidian-style notes and lets Claude copy it back instead of rebuilding it. Auto-saves every file Claude writes.",
   "author": { "name": "spencerrios64" },
   "homepage": "https://github.com/spencerrios64/codestash",
   "repository": "https://github.com/spencerrios64/codestash",
