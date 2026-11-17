@@ -1,0 +1,11 @@
+{
+  "name": "spencerrios64-tools",
+  "owner": { "name": "spencerrios64" },
+  "plugins": [
+    {
+      "name": "codestash",
+      "source": "./",
+      "description": "Save every piece of reusable code Claude writes into an Obsidian-style vault, and reuse it instead of rebuilding."
+    }
+  ]
+}
