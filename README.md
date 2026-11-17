@@ -29,6 +29,7 @@ It needs Node 18+ (no packages). What you get:
 - **MCP tools**: `snippet_search`, `snippet_get`, `snippet_save`, `snippet_link`, `snippet_list`, `snippet_delete`
 - **Skill**: tells Claude to search the vault before writing code, reuse a hit as it is, and save new reusable code afterwards
 - **`/stash`**: `/stash save` saves the reusable code from the current chat, `/stash search <words>`, `/stash list`
+- **Auto-save hook**: every time Claude Code writes a file, a hook (`hooks/autosave.mjs`) saves it to the vault by itself, and updates the same note if the file is written again. Nothing to remember or ask for. Files under 4 lines, lockfiles and logs are skipped (change the minimum with `CODESTASH_MIN`).
 
 The vault is a plain folder of markdown files: `~/.codestash/vault` by default, or set `CODESTASH_DIR`. Open that folder in Obsidian to browse it, or zip it up and import it in the web app (select the `.md` files with Import).
 
