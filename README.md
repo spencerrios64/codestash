@@ -61,3 +61,15 @@ The `hash` (SHA-1 of the whitespace-normalised code) is the same in the web app 
 ## Limits
 
 Titles are guessed from the text before each code block, so rename anything odd. Code shorter than 3 lines is skipped on import (change it in the sidebar). The web app and the plugin do not sync by themselves; move notes between them with the zip export / Import.
+
+## Import everything Claude Code wrote
+
+Claude Code keeps every session on your PC as `.jsonl` files in `~/.claude/projects`. The `import-claude-code.mjs` script (Node 18+) reads them, takes every file Claude wrote (the latest version of each file) plus code blocks in its replies, skips lockfiles and tiny files, and removes duplicates.
+
+```
+node import-claude-code.mjs --dry                  # preview, writes nothing
+node import-claude-code.mjs                        # save into your vault (~/.codestash/vault)
+node import-claude-code.mjs --json-only my.json    # make one file to Import in the web app
+```
+
+Options: `--dir` (sessions folder), `--vault`, `--min` (shortest snippet in lines, default 4), `--no-fences` (only written files). Notes are tagged `claude-code` plus the project name. Running it again only adds what is new.
