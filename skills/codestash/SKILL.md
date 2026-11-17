@@ -1,11 +1,14 @@
 ---
 name: codestash
-description: Use when writing or editing code. Search the user's code vault first and reuse saved snippets instead of rebuilding; save any new reusable code afterwards.
+description: Use at the start of ANY coding task, before writing code. Search the user's code vault first and reuse saved snippets instead of rebuilding; save any new reusable code afterwards.
 ---
 
 # codestash
 
 The user keeps a vault of code that AI has already written for them (Obsidian-style notes, one snippet per file). Use it so work is never rebuilt from scratch.
+
+## Automatic saving
+This plugin has a hook that saves every file Claude writes (the Write tool) into the vault by itself, and updates the note when the same file is rewritten. Do not re-save those files by hand. Still use `snippet_save` for useful code that appears only in a reply (a code block, not a file), and add notes and `[[links]]` to the important snippets.
 
 ## Before writing code
 1. Call `snippet_search` with a few keywords for what is needed (a function, a game system, a UI piece, a script). Try the language and tag filters too.
